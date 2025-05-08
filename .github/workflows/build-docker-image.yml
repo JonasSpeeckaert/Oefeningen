@@ -1,0 +1,11 @@
+name: Build Docker image
+on:
+  push:
+    branches: ["main"]
+jobs:
+  build-docker-image:
+    runs-on: ubuntu:latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: build the docker image
+      run: docker build . --tag guestbook
