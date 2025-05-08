@@ -1,7 +1,6 @@
-FROM ubuntu:latest
+FROM node:latest
 WORKDIR /app
-COPY guest-book-mount .
-RUN apt-get update && apt-get install -y nodejs npm
+COPY . .
 RUN npm install
-CMD ["node", "hello.js"]
+CMD ["node", "app.js"]
 EXPOSE 3000
